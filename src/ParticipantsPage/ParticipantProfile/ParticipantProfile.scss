@@ -1,0 +1,149 @@
+@import "../../App.scss";
+
+.participant-profile-main {
+  display: flex;
+  height: 100%;
+  max-height: 90.85vh;
+  background-color: $whiteColor;
+  padding-bottom: 64px;
+}
+
+.participant-profile-inside {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: $whiteColor;
+}
+
+.participants-title-main-profile {
+  @include flex(space-between, center);
+  padding: 16px 16px;
+  background-color: $child-titleColor;
+}
+
+.participant-profile-detail {
+  display: flex;
+  padding: 24px 36px 0 36px;
+  flex-direction: column;
+  align-items: center;
+
+  .user-name {
+    padding-top: 16px;
+    @include font-style(Helvetica, 600, 20px, 23px);
+  }
+
+  .user-email {
+    padding-top: 8px;
+    @include font-style(Helvetica, 400, 16px, 22px);
+    color: #545E67;
+  }
+
+  .user-desc {
+    padding-top: 36px;
+    @include font-style(Helvetica, 400, 16px, 28px);
+    text-align: left;
+    color: #545E67;
+  }
+
+  .css-124yhl1-MuiAvatar-root {
+    width: 156px !important;
+    height: 156px !important;
+  }
+}
+
+.participant-address-detail {
+  max-width: 100%;
+  @include font-style(Helvetica, 400, 16px, 24px);
+  padding: 36px 36px 48px 36px;
+
+  div {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+.participant-option {
+  padding: 20px 36px;
+  gap: 16px;
+  @include flex(space-between, center);
+
+  button:first-child {
+    @include bg-gradient();
+    color: $whiteColor;
+  }
+
+  button {
+    @include font-style(Helvetica, 400, 14px, 24px);
+    width: 100%;
+    border-color: lightgray;
+    color: black;
+    text-decoration: none;
+    padding: 16px 0px;
+    border-radius: 8px;
+  }
+}
+
+.participants-profile-img {
+  border-radius: 50%;
+}
+
+
+@media (min-width: 1024px) and (max-width: 1680px) {
+
+  .participants-title-main-profile {
+    @include flex(space-between, center);
+    padding: 12px 16px;
+    background-color: $child-titleColor;
+  }
+
+  .participant-profile-detail {
+    padding: 24px 24px 0 24px;
+
+    .user-name {
+      padding-top: 12px;
+      @include font-style(Helvetica, 500, 16px, 20px);
+    }
+
+    .user-email {
+      padding-top: 4px;
+      @include font-style(Helvetica, 400, 14px, 16px);
+    }
+
+    .user-desc {
+      padding-top: 0px;
+      @include font-style(Helvetica, 400, 13px, 20px);
+    }
+  }
+
+  .participant-address-detail {
+    @include font-style(Helvetica, 400, 14px, 24px);
+    padding: 24px 24px 16px 24px;
+
+    div {
+      display: flex;
+      gap: 16px;
+    }
+  }
+
+  .participant-option {
+    padding: 24px 24px;
+    gap: 16px;
+    @include flex(space-between, center);
+
+    button:first-child {
+      @include bg-gradient();
+      color: $whiteColor;
+    }
+
+    button {
+      @include font-style(Helvetica, 400, 12px, 24px);
+      width: 100%;
+      border-color: lightgray;
+      color: black;
+      padding: 6px 0px;
+    }
+  }
+}

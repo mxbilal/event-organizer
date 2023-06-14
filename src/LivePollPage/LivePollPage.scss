@@ -1,0 +1,228 @@
+@import '../App.scss';
+
+.livepoll-main {
+    display: flex;
+    gap: 5px;
+    height: 100%;
+
+    .css-ee20y-MuiPaper-root {
+        margin: 0 16px;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+}
+
+.livepoll-inside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.livepoll-title-main {
+    width: 92%;
+    padding: 12px;
+    background-color: #FAFBFC;
+
+    .livepoll-title {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        @include flex(space-between, center);
+
+        p {
+            @include font-style(Fellix, 700, 20px, 28px);
+        }
+    }
+}
+
+.livepoll-cards-main {
+    @include flex(content, center);
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: overlay;
+    height: 100%;
+
+    .live-polls-container {
+        padding-bottom: 16px;
+    }
+}
+
+.livepoll-card {
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    gap: 30px;
+
+    div:first-child::after {
+        content: "";
+        background: rgba(40, 40, 40, 0.08);
+        width: 1px;
+        height: 100px;
+        display: block;
+    }
+
+    div:first-child {
+        display: flex;
+        gap: 10px;
+    }
+
+    .livepoll-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    img {
+        border-radius: 50px;
+    }
+}
+
+.livepoll-search {
+    width: 93%;
+
+    .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+        width: 100%;
+    }
+
+    .css-1o9s3wi-MuiInputBase-input-MuiOutlinedInput-input {
+        margin-left: 20px;
+    }
+
+    .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root {
+        border-radius: 30px;
+        height: 40px;
+    }
+}
+
+.livepoll-search {
+    padding: 12px;
+    @include flex(space-around, center);
+    gap: 8px;
+
+    .MuiOutlinedInput-root {
+        border-radius: 999px;
+        background-color: #f3f4f8;
+        padding: 4px 8px;
+    }
+
+    .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+        min-width: 90%;
+    }
+
+    .css-1o9s3wi-MuiInputBase-input-MuiOutlinedInput-input {
+        margin-left: 16px;
+    }
+
+    .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root {
+        border-radius: 30px;
+    }
+}
+
+.live-poll-filter {
+    display: flex;
+    padding: 9px;
+    background-color: #F3F4F8;
+    border-radius: 999px;
+}
+
+.live-polls-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 12px;
+
+    .polls-question {
+        @include font-style(Helvetica, 700, 16px, 28px);
+    }
+
+    .polls-question-container-head {
+        @include font-style(Helvetica, 400, 16px, 16px);
+    }
+
+    .css-15v22id-MuiAccordionDetails-root {
+        padding: 0px 16px 16px;
+    }
+
+    .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+        min-height: 48px;
+    }
+
+    .css-1elwnq4-MuiPaper-root-MuiAccordion-root:last-of-type {
+        box-shadow: none;
+    }
+
+    .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded:last-of-type,
+    .MuiAccordionSummary-gutters {
+        background-color: #F3F4F8;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    .css-i4bv87-MuiSvgIcon-root {
+        background: #E3E4E7;
+        border-radius: 999px;
+    }
+}
+
+.polls-radio-group {
+    margin-top: 5px;
+}
+
+.polls-answers-radio {
+    @include flex(space-between, center);
+    border-radius: 10px;
+    padding: 1px 4px;
+
+    span {
+        @include font-style(Helvetica, 400, 14px, 24px);
+    }
+
+    @include font-style(Helvetica, 400, 14px, 24px);
+
+    .css-vqmohf-MuiButtonBase-root-MuiRadio-root {
+        padding: 2px 5px !important;
+    }
+}
+
+.gradient {
+    background: linear-gradient(90deg, rgba(196, 196, 196, 0) 0%, rgba(76, 111, 255, 0.24) 100%);
+}
+
+
+@media (min-width: 1024px) and (max-width: 1768px) {
+
+    .live-poll-filter {
+        padding: 6px;
+    }
+
+    .polls-radio-group {
+        margin-top: 0px;
+    }
+
+    .live-polls-container {
+        gap: 16px;
+
+        .polls-question {
+            @include font-style(Helvetica, 700, 14px, 24px);
+        }
+
+        .polls-question-container-head {
+            color: #545E67;
+            @include font-style(Helvetica, 400, 14px, 16px);
+        }
+    }
+}
+
+//small screens
+@media (max-width: 768px) {
+    .title-main {
+        display: none;
+    }
+}

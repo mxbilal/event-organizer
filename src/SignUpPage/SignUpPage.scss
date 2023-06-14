@@ -1,0 +1,287 @@
+@import "../App.scss";
+$signin-page-background: #f8f8f8;
+
+h3 {
+  height: 0;
+}
+
+.sign-up-main {
+  background-color: $signin-page-background;
+  text-align: center;
+  display: flex;
+  height: 91vh;
+  width: 100%;
+  justify-content: center;
+
+  form {
+    width: 30%;
+    margin: auto;
+  }
+
+  .forgot-pass-form {
+    text-align: center;
+    @include flex(center, center);
+    padding: 48px 48px 72px 48px;
+    flex-direction: column;
+    background-color: $whiteColor;
+
+    .welcome-msg {
+      @include font-style(Fellix, 700, 36px, 43px);
+    }
+
+    .desc {
+      @include font-style(Helvetica, 400, 20px, 20px);
+      padding-top: 23px;
+      color: #282828;
+    }
+  }
+
+  .MuiTextField-root {
+    width: 100%;
+  }
+
+  .MuiButton-contained {
+    background: $button-gradient;
+    width: 100%;
+    color: $whiteColor;
+    font-size: 15px;
+    padding: 13px 0;
+  }
+
+  .sign-up-form-success {
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    @include flex(center, center);
+    padding: 48px 48px 72px 48px;
+    flex-direction: column;
+    background-color: $whiteColor;
+
+    .welcome-msg {
+      @include font-style(Fellix, 700, 36px, 43px);
+    }
+
+    .desc {
+      @include font-style(Helvetica, 400, 16px, 24px);
+      padding-top: 23px;
+      color: #282828;
+    }
+  }
+
+  .forgot-pass-form-success {
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    @include flex(center, center);
+    padding: 48px 48px 72px 48px;
+    flex-direction: column;
+    background-color: $whiteColor;
+
+    .welcome-msg {
+      @include font-style(Fellix, 700, 36px, 43px);
+    }
+
+    .desc {
+      @include font-style(Helvetica, 400, 16px, 24px);
+      padding-top: 23px;
+      color: #282828;
+    }
+  }
+
+}
+
+.sign-up-form {
+  text-align: center;
+  background-color: $whiteColor;
+  @include flex(center, center);
+  flex-direction: column;
+  padding: 48px 48px 72px 48px;
+
+  .welcome-msg {
+    @include font-style(Fellix, 700, 36px, 43px);
+  }
+
+  .desc {
+    @include font-style(Helvetica, 400, 20px, 20px);
+    padding-top: 23px;
+    color: #282828;
+  }
+}
+
+.sign-up-form .MuiTextField-root {
+  width: 100%;
+}
+
+.sign-up-form .MuiButton-contained {
+  background: $button-gradient;
+  width: 100%;
+  color: $whiteColor;
+  font-size: 15px;
+  padding: 13px 0;
+}
+
+.sign-up-option {
+  @include flex(space-evenly, center);
+  width: 100%;
+}
+
+.no-account {
+  width: 100%;
+  @include font-style(Helvetica, 400, 16px, 16px);
+  margin-top: 36px;
+  text-align: center;
+}
+
+.no-account span {
+  color: #5771f9;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) and (max-width: 1768px) {
+  .sign-up-main {
+    form {
+      width: 35%;
+    }
+
+    .forgot-pass-form {
+
+      .welcome-msg {
+        @include font-style(Fellix, 700, 32px, 43px);
+      }
+
+      .desc {
+        @include font-style(Helvetica, 400, 16px, 20px);
+        padding-top: 10px;
+      }
+    }
+
+    .forgot-pass-form-success {
+      width: 35%;
+      padding: 36px 48px 64px 48px;
+
+      .welcome-msg {
+        @include font-style(Fellix, 700, 32px, 43px);
+      }
+
+      .desc {
+        @include font-style(Helvetica, 400, 16px, 24px);
+      }
+    }
+
+    .sign-up-form-success {
+      width: 35%;
+      padding: 36px 48px 64px 48px;
+
+      .welcome-msg {
+        @include font-style(Fellix, 700, 32px, 43px);
+      }
+
+      .desc {
+        @include font-style(Helvetica, 400, 16px, 24px);
+      }
+    }
+  }
+
+  .sign-up-form {
+    padding: 36px 48px 64px 48px;
+
+    .welcome-msg {
+      @include font-style(Fellix, 700, 32px, 43px);
+    }
+
+    .desc {
+      @include font-style(Helvetica, 400, 16px, 20px);
+      padding-top: 10px;
+    }
+  }
+}
+
+//Tablet Responsive
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sign-up-main {
+    width: 100%;
+    .forgot-pass-form {
+      width: 55%;
+      margin: auto;
+    }
+
+    .forgot-pass-form-success {
+      width: 55%;
+      padding: 36px 48px 64px 48px;
+
+      .welcome-msg {
+        @include font-style(Fellix, 700, 32px, 43px);
+      }
+
+      .desc {
+        @include font-style(Helvetica, 400, 16px, 24px);
+      }
+    }
+  
+    .sign-up-form-success {
+      width: 55%;
+      padding: 36px 48px 64px 48px;
+  
+      .welcome-msg {
+        @include font-style(Fellix, 700, 32px, 43px);
+      }
+  
+      .desc {
+        @include font-style(Helvetica, 400, 16px, 24px);
+      }
+    }
+  }
+}
+
+//Mobile Responsive
+@media (max-width: 767px) {
+  .sign-up-main {
+    .forgot-pass-form {
+      padding: 48px 25px 64px 25px;
+
+      .welcome-msg {
+        @include font-style(Fellix, 700, 28px, 43px);
+      }
+
+      .desc {
+        @include font-style(Helvetica, 400, 18px, 28px);
+        // padding-top: 23px;
+        color: #282828;
+      }
+    }
+
+    .forgot-pass-form-success {
+      width: 75%;
+      padding: 48px 24px 64px 24px;
+
+      .welcome-msg {
+        @include font-style(Fellix, 700, 28px, 43px);
+      }
+    }
+  }
+
+  .sign-up-main form {
+    width: 90% !important;
+  }
+
+  .sign-up-option {
+    width: 100%;
+  }
+
+  .sign-up-form .MuiTextField-root {
+    width: 100%;
+  }
+
+  .sign-up-form .MuiButtonBase-root {
+    width: 100%;
+  }
+
+  .sign-up-main .forgot-pass-form .MuiFormControl-root {
+    width: 100%;
+  }
+
+  .sign-up-main .MuiButtonBase-root {
+    width: 100%;
+  }
+}

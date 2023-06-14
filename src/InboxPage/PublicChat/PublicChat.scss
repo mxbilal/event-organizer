@@ -1,0 +1,67 @@
+@import "../../App.scss";
+
+$chat-option-color : #6B6F7A;
+
+.public-chat-main{
+    height: 74.85vh;
+}
+.public-chat-card{
+    display: flex;
+    padding: 10px 5px;
+    gap: 10px;
+}
+
+.public-chat-card-main{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 90%;
+}
+.public-chat-inside{
+    height: 100%;
+    .send-msg{
+        @include flex(space-evenly,center);
+        gap: 5px;
+        background: #F3F4F8;
+        border-radius: 100px;
+        margin: 0 10px;
+        padding: 5px;
+    }
+}
+.public-chat-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .public-chat-detail-name{
+        @include flex(none,center);
+        gap: 10px;
+        .name{ @include font-style(HelveticaNeue, 400, 16px, 19px)}
+        .time{ 
+            @include font-style(HelveticaNeue, 400, 14px, 14px);
+            color: $chat-option-color;
+        }
+    }
+    .public-chat-detail-msg{
+        @include font-style(HelveticaNeue, 400, 16px, 28px);
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #F3F4F8;
+    }
+    .public-chat-detail-option{
+        @include font-style(HelveticaNeue, 400, 14px, 16px);
+        color: $chat-option-color;
+        display: flex;
+        gap: 10px;
+        :hover{
+            transition: 0.5s;
+            cursor: pointer;
+            color: blue;
+        }
+    }
+}
+
+//small screens
+@media (max-width: 768px) {
+    .public-chat-card-main{
+        height: 57%;
+    }
+}

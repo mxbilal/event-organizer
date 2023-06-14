@@ -1,0 +1,305 @@
+@import "../App.scss";
+
+.question-main {
+    display: flex;
+    background-color: $whiteColor;
+    transition: all ease-in-out;
+    transition-duration: 200;
+    height: 100%;
+    animation: slide 2s forwards;
+
+    .css-ee20y-MuiPaper-root {
+        width: 100%;
+    }
+
+    .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
+        height: 140px;
+        align-items: flex-start;
+
+        .css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input {
+            overflow: scroll !important;
+            height: auto;
+            max-height: 108px;
+        }
+    }
+
+    .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+        width: 100% !important;
+    }
+}
+
+
+.delete-popover {
+    margin-top: 16px;
+    margin-left: 0px;
+    cursor: pointer;
+
+    .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+        border: 1px solid #F2F2F2;
+        border-radius: 8px;
+    }
+
+    :hover {
+        color: red;
+    }
+}
+
+.question-delete-main {
+    display: flex;
+    gap: 40px;
+    padding: 12px 16px;
+
+    .question-delete-text {
+        cursor: pointer;
+        padding: 4px 0px;
+    }
+
+    p {
+        @include font-style(Helvetica, 12px, 400, 16px);
+    }
+
+
+    svg {
+        width: 18px !important;
+    }
+}
+
+.question-inside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $whiteColor;
+    position: relative;
+
+    form {
+        background-color: $whiteColor;
+        padding: 12px 16px;
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+
+        .MuiLoadingButton-root {
+            background: $button-gradient;
+            width: 100%;
+            color: $whiteColor;
+            font-size: 12px;
+            padding: 12px 0;
+        }
+
+        .disb {
+            background: #EEEEEE !important;
+            color: #6B6F7A !important;
+        }
+
+        .words-count {
+            font-size: 11px;
+            margin: -15px 0 0 90%;
+        }
+    }
+}
+
+.question-title-main {
+    padding: 16px 20px;
+    display: flex-end;
+    background-color: $child-titleColor;
+
+    .question-title {
+        width: 100%;
+        text-align: center;
+        @include flex(space-between, center);
+        @include font-style(Fellix, 700, 26px, 28px);
+    }
+}
+
+.question-cards-main {
+    @include flex(content, center);
+    flex-direction: column;
+    align-items: end;
+    flex-grow: 1;
+    gap: 10px;
+    overflow: overlay;
+    padding: 8px 16px;
+    scroll-behavior: smooth;
+
+
+    // .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+    //     padding: 22px;
+    //     background: #12c18d;
+    //     .question-delete-text {
+    //         padding: 22px;
+    //     }
+    // }
+
+
+
+
+    .question {
+        background-color: #F3F4F8;
+        padding: 12px 16px 16px 16px;
+        border-radius: 8px 0 8px 8px;
+
+
+
+        .question-text {
+            @include font-style(Helvetica, 400, 15px, 150%);
+        }
+
+        // .dot{display: none}
+        .answered-time {
+            @include font-style(Helvetica, 400, 12px, 100%);
+            @include flex(right, center);
+            gap: 12px;
+            margin-top: 8px;
+            color: #787e83;
+
+            .answered {
+                background-color: #12c18d;
+                border-radius: 4px;
+                color: $whiteColor;
+                padding: 4px 12px;
+                @include font-style(Helvetica, 400, 10px, 100%)
+            }
+
+        }
+
+        .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+            padding: 6px 16px;
+            cursor: pointer;
+            margin-left: 8px;
+            margin-top: 24px;
+            // top: 170px !important;
+            box-shadow: 1px 1px rgba($color: #bdbdbd, $alpha: 1.0) !important;
+        }
+
+    }
+}
+
+.ask-question-field {
+    //height: 120px;
+
+    .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+        width: 100% !important;
+    }
+
+    .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+        border: 1px solid #6B6F7A !important;
+        border-radius: 8px !important;
+    }
+}
+
+// .questions-container::-webkit-scrollbar {
+//     //display: none;
+//   }
+// .question:hover > .dot{
+//     display: block;
+//     text-align:right;
+//     cursor: pointer;
+// }
+.dot {
+    text-align: right;
+    cursor: pointer;
+
+    svg {
+        margin-top: auto;
+        margin-bottom: 4px;
+    }
+}
+
+// .question-delete-text:hover {
+//     color: red;
+// }
+
+.guideline {
+    @include font-style(Helvetica, 400, 12px, 16px);
+    color: #545E67;
+}
+
+@media (min-width: 1024px) and (max-width: 1768px) {
+
+    .question-main {
+        .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
+            height: 100px;
+            align-items: flex-start;
+            font-size: 14px;
+
+            .css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input {
+                overflow: scroll !important;
+                height: auto;
+                max-height: 72px;
+            }
+        }
+    }
+
+    .question-cards-main {
+        .question {
+            .question-text {
+                @include font-style(Helvetica, 400, 14px, 140%);
+            }
+
+            // .dot{display: none}
+            .answered-time {
+                @include flex(right, center);
+                gap: 12px;
+                margin-top: 8px;
+
+                .answered {
+                    background-color: #12c18d;
+                    border-radius: 4px;
+                    color: $whiteColor;
+                    padding: 4px 12px;
+                    @include font-style(Helvetica, 400, 11px, 100%)
+                }
+
+            }
+
+            .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+                padding: 6px 16px;
+                cursor: pointer;
+                margin-left: 8px;
+                margin-top: 24px;
+                // top: 170px !important;
+                box-shadow: 1px 1px rgba($color: #bdbdbd, $alpha: 1.0) !important;
+            }
+
+        }
+    }
+
+    // .title-main {
+    //     display: none;
+    // }
+
+}
+
+@media (max-width: 767px) {
+    .question-main {
+        height: 100%;
+        animation: slide 2s forwards;
+
+        .css-ee20y-MuiPaper-root {
+            width: 100%;
+        }
+
+        .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
+            height: auto;
+            padding: 14px 16px;
+
+            .css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input {
+                height: auto;
+                max-height: 54px;
+            }
+        }
+    }
+
+    .title-main {
+        display: none;
+    }
+}
+
+.modal-box {
+    text-align: center;
+
+    .modal-cancel-btn,
+    .modal-delete-btn {
+        cursor: pointer;
+    }
+}

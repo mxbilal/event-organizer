@@ -1,0 +1,206 @@
+@import "../App.scss";
+$background: #ffff;
+
+.header-page-container {
+  background-color: $background;
+  //position: fixed;
+  z-index: 20;
+  width: 100%;
+}
+
+.header-page-main {
+  @include flex(space-between, center);
+  margin: 0 3% 0 3%;
+  padding: 16px 0;
+}
+
+.header-page-logo {
+  @include flex(space-between, center);
+  gap: 5px;
+}
+
+.header-page-logo-img {
+  max-width: 215px;
+  max-height: 56px;
+}
+
+.header-page-logo-img:hover {
+  cursor: pointer;
+}
+
+.header-page-actions {
+  @include flex(center, center);
+  gap: 76px;
+
+  .header-login {
+    @include flex(center, center);
+    gap: 10px;
+
+    .userEmail,
+    .userName,
+    .userEmail:hover,
+    .userName:hover {
+      color: rgba(18, 22, 31, 0.48);
+    }
+
+    .userName {
+      color: black !important;
+      font-weight: 600;
+    }
+  }
+}
+
+.logout {
+  padding: 16px 32px;
+  margin: 4px 4px;
+  @include font-style(Helvetica, 400, 16px, 24px);
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: rgb(239, 240, 243);
+  color: #4c6fff;
+}
+
+.header-popover {
+  .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+    margin: 0 -80px;
+  }
+}
+
+.header-page-actions p {
+  @include font-style(Helvetica, 500, 16px, 18px);
+}
+
+.black-rounded-btn {
+  background-color: #282828;
+  border-radius: 9999px;
+  padding: 18px 52px;
+  color: $whiteColor;
+}
+
+.black-rounded-btn:hover {
+  @include bg-gradient;
+  color: $whiteColor;
+  transition: ease-in-out;
+  transition-duration: 400ms;
+  cursor: pointer;
+}
+
+.header-page-actions p:hover:nth-child(-n + 3) {
+  cursor: pointer;
+  color: #4c6fff;
+}
+
+.mobile-head,
+.mobile-head2 {
+  display: none;
+}
+
+.desktop-head {
+  display: block;
+}
+
+@media (min-width: 1024px) and (max-width: 1680px) {
+
+  .logout {
+    padding: 12px 28px;
+    margin: 4px 4px;
+    @include font-style(Helvetica, 400, 14px, 24px);
+    cursor: pointer;
+  }
+
+  .mobile-head,
+  .mobile-head2 {
+    display: none;
+  }
+
+  .desktop-head {
+    display: block;
+  }
+
+  .header-page-main {
+    margin: 0 3% 0 3%;
+    padding: 4px 0;
+    max-height: 9vh;
+  }
+
+  .header-page-actions {
+    gap: 48px;
+  }
+
+  .header-page-actions p {
+    @include font-style(Helvetica, 500, 14px, 18px);
+  }
+
+  .black-rounded-btn {
+    padding: 14px 40px;
+  }
+
+  .header-page-logo-img {
+    max-width: 160px;
+    max-height: 56px;
+  }
+
+  .header-login {
+    img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+
+  .mobile-head,
+  .mobile-head2 {
+    display: block;
+  }
+
+  .desktop-head {
+    display: none
+  }
+
+  .header-page-main {
+    padding: 10px 0;
+  }
+
+
+  .mobile-header-side {
+    display: block !important;
+  }
+
+  .header-page-actions {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    z-index: 200;
+    position: absolute;
+    background: #F8F8F8;
+    width: -webkit-fill-available;
+    height: 100vh;
+    padding: 48px 24px;
+  }
+
+  .header-page-main {
+    @include flex(space-between, center);
+  }
+
+  .header-page-logo-img {
+    max-width: 160px;
+    max-height: 56px;
+  }
+}
+
+// @media (min-width: 768px) and (max-width: 1023px) {
+
+//   .mobile-head,
+//   .mobile-head2 {
+//     display: block;
+//   }
+
+//   .desktop-head {
+//     display: none
+//   }
+
+// }

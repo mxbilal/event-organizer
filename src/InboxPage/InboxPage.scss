@@ -1,0 +1,30 @@
+@import "../App.scss";
+
+.conversation-title-main{
+  width: 92%;
+  padding: 12px;
+  background-color: $child-titleColor;
+  .conversation-title {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      @include flex(space-between,center);
+      p{@include font-style(Fellix, 700, 20px, 28px);}
+  }
+}
+.inbox-main{
+    display: flex;
+    gap: 5px;
+    background-color: $whiteColor;
+    height: 90vh;
+    overflow: hidden;
+}
+.chat-tabs{
+    @include flex(center,center);
+    gap: 20px;
+  }
+.conversation-main{width: 100%;}
+
+@media (max-width: 768px) {
+  .conversation-title-main{ display: none;}
+}

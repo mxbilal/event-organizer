@@ -1,0 +1,336 @@
+@import "../App.scss";
+
+.body {
+    background-color: $whiteColor;
+}
+
+.body::-webkit-scrollbar-thumb {
+    background: #4c6fff;
+}
+
+.layout-main {
+    display: flex;
+    justify-content: flex-end;
+    // height: 90.85vh;
+    transition: all ease-in-out;
+    transition-duration: 200;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.layout-main {
+    height: 90.85vh;
+}
+
+.stream-container {
+    width: 100%;
+    justify-content: center;
+}
+
+.sidebar-container {
+    min-width: 4%;
+    height: 100%;
+}
+
+.layout-event-stream {
+    width: 100%;
+    height: 90.85vh;
+    background-color: rgb(26, 26, 26);
+    overflow: hidden;
+    display: flex;
+
+    .container {
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 1648px;
+        padding-top: 56.25%;
+    }
+
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.mobile-layout {
+    display: flex;
+    justify-content: flex-end;
+    width: 35%;
+    max-height: 90.85vh;
+
+    .layout-children {
+        width: 85%;
+        height: 100%;
+        overflow: hidden;
+        scrollbar-color: yellow;
+        background-color: $whiteColor !important;
+
+        .cross-btn {
+            position: absolute;
+            right: 4.8%;
+            top: 11%;
+            z-index: 1;
+            width: 36px;
+            height: 36px;
+        }
+
+        .cross-btn:hover {
+            cursor: pointer;
+            box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+        }
+
+        .live-poll {
+            z-index: 100;
+            width: 22%;
+            height: 90.85vh;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.36);
+        }
+    }
+}
+
+
+.no-video-container {
+    width: 100%;
+    display: flex;
+    height: 90.85vh;
+    color: rgb(176, 177, 179);
+    justify-content: center;
+    @include font-style(Helvetica, 400, 16px, 24px);
+
+    .content {
+        margin: auto;
+        text-align: center;
+    }
+
+    svg {
+        width: 84px;
+        fill: rgb(176, 177, 179);
+    }
+}
+
+@media (min-width: 1024px) and (max-width:1439px) {
+    .layout-main {
+        height: 90.5vh;
+    }
+
+    .layout-event-stream {
+        height: 100%;
+
+        .container {
+            max-width: 1090px !important;
+        }
+    }
+
+    .mobile-layout {
+        .layout-children {
+            .cross-btn {
+                top: 11.5%;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+    
+}
+
+@media (min-width: 1440px) and (max-width:1680px) {
+    .layout-event-stream {
+        .container {
+            max-width: 1260px;
+        }
+    }
+
+}
+
+@media (min-width: 1921px) and (max-width:2560px) {
+    .layout-event-stream {
+        height: 94vh;
+
+        .container {
+            max-width: 2400px;
+        }
+    }
+
+    .layout-children {
+        .cross-btn {
+            position: absolute;
+            padding: 10px;
+            right: 5.5%;
+            top: 7%;
+        }
+
+    }
+
+    .live-poll-card {
+        width: 90% !important;
+    }
+}
+
+
+//live poll only
+.live-poll-card {
+    background: $whiteColor;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 20%), 0px 1px 1px 0px rgba(0, 0, 0, 14%), 0px 1px 3px 0px rgba(0, 0, 0, 12%);
+    padding: 16px;
+    margin: 20px 15px;
+    border-radius: 10px;
+
+    .live-poll-question {
+        @include font-style(Helvetica, 600, 16px, 26px)
+    }
+}
+
+.live-poll-head {
+    @include flex(space-between, center);
+    padding: 5px 0;
+
+    .poll-title {
+        @include font-style(Helvetica, 500, 16px, 16px)
+    }
+
+    .end-side {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+        .poll-ends-in {
+            @include font-style(Helvetica, 400, 12px, 12px)
+        }
+
+        svg:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+            transition: all 500ms;
+        }
+    }
+
+    .ends-timer {
+        padding: 4px 8px;
+        @include font-style(Helvetica, 600, 12px, 12px);
+        border-radius: 20px;
+        background: #4C6FFF29;
+        color: #4C6FFF;
+    }
+}
+
+//all mobiles 
+@media (max-width: 767px) {
+    .layout-main {
+        flex-direction: column;
+    }
+
+    .layout-event-stream {
+        height: 30vh;
+    }
+
+    .desc-main {
+        padding: 20px;
+    }
+
+    .desc-heading-title {
+        font-size: 32px;
+    }
+
+    .layout-children {
+        overflow: hidden !important;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .mobile-layout {
+        height: 61vh !important;
+        width: 100% !important;
+        flex-direction: column-reverse;
+    }
+
+    .cross-btn {
+        display: none !important;
+    }
+
+    .live-poll {
+        width: 100% !important;
+        height: 54.5vh !important;
+
+        .live-poll-card {
+            width: 100%;
+        }
+    }
+}
+
+//small laptops
+@media (min-width: 768px) and (max-width: 1023px) {
+    .layout-main {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .layout-event-stream {
+        height: 45vh;
+    }
+
+    .desc-main {
+        padding: 20px;
+    }
+
+    .desc-heading-title {
+        font-size: 32px;
+    }
+
+    .layout-children {
+        overflow: hidden !important;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .mobile-layout {
+        height: 47.5vh !important;
+        width: 100% !important;
+        flex-direction: column-reverse;
+    }
+
+    .cross-btn {
+        display: none !important;
+    }
+
+    .live-poll {
+        width: 100% !important;
+        height: 54.5vh !important;
+
+        .live-poll-card {
+            width: 100%;
+        }
+    }
+
+    // .live-poll {
+    //     width: 26% !important;
+    // }
+}
+
+.css-dmmspl-MuiFormGroup-root {
+    margin: 8px 0;
+    gap: 8px;
+
+    .css-j204z7-MuiFormControlLabel-root {
+        @include font-style(Helvetica, 400, 12px, 12px)
+    }
+}

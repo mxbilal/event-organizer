@@ -1,0 +1,33 @@
+@import "../App.scss";
+
+.advertisement-main {
+  padding: 12px 12px 14px 16px;
+  background: #282828;
+  width: 94%;
+
+  .ads-heading {
+    @include flex(space-between, center);
+  }
+  .ads-heading-cols-1 {
+    @include flex(start, center);
+    gap: 8px;
+  }
+  .ads-heading-cols-1 > p {
+    color: #1fd662;
+    @include font-style(Fellix, 800, 24px, 28px);
+  }
+  p {
+    @include font-style(Helvetica, 600, 16px, 19px);
+    color: $whiteColor;
+    padding-top: 8px;
+  }
+  button {
+    padding: 9px 17px;
+    color: $whiteColor;
+    outline: none;
+    border: none;
+    background: #1fd662;
+    border-radius: 16.5px;
+    margin-top: 14px;
+  }
+}

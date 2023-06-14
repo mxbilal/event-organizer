@@ -1,0 +1,60 @@
+@import "../App.scss";
+
+.footer-page-container {
+  width: 100%;
+  @include flex(space-around, center);
+  flex-direction: column;
+  background-color: #282828;
+  color: white;
+  position: static;
+  left: 0;
+  bottom: 0;
+}
+
+.footer-page-links {
+  width: 85%;
+  @include flex(space-between, center);
+}
+.footer-page-logo {
+  @include flex(space-between, center);
+  gap: 5px;
+}
+
+.footer-page-actions {
+  @include flex(center, center);
+  gap: 93px;
+}
+
+.footer-page-actions p {
+  @include font-style(Helvetica, 400, 16px, 20px);
+}
+.footer-page-copyright {
+  margin-bottom: 36px;
+  @include font-style(Helvetica, 300, 16px, 20px);
+}
+
+@media (max-width: 1366px) {
+  .footer-page-links {
+    width: 85%;
+  }
+}
+
+
+//Mobile Responsive
+
+@media (max-width: 576px) {
+  .footer-page-links {
+    display: block;
+    .footer-page-actions {
+      @include flex(start, start);
+      flex-direction: column;
+      gap: 48px;
+    }
+  }
+  .footer-page-copyright {
+    margin-top: 150px;
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 768px) {
+}

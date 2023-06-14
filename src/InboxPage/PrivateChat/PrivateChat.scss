@@ -1,0 +1,37 @@
+@import '../../App.scss';
+$time-color : #6B6F7A;
+
+.private-chat-main{
+    height: 74.85vh;
+    overflow: scroll;
+}
+.private-chat-card{
+    display: flex;
+    gap: 10px;
+    padding: 10px
+}
+
+.private-chat-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.private-chat-name{
+    @include flex(space-between,center);
+    .name{ @include font-style(Helvetica, 400, 16px, 18px) }
+    .time{ 
+        @include font-style(Helvetica, 400, 12px, 14px);
+        color: $time-color;
+     }
+}
+.private-chat-msg{
+    @include flex(space-between,center);
+    .msg{ @include font-style(Helvetica, 400, 14px, 16px) }
+    .msg-numbers{
+        background-color: #1976D2;
+        color: #fff;
+        padding: 4px 7px;
+        border-radius: 999px;
+        font-size: 10px;
+    }
+}

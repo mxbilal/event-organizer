@@ -1,0 +1,212 @@
+@import '../../App.scss';
+
+.event-detail-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.event-detail-head {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    gap: 40px;
+    background-color: $child-titleColor;
+
+    p {
+        @include font-style(Fellix, 700, 20px, 28px);
+    }
+}
+
+.event-detail-inside {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    overflow: overlay;
+
+    .event-detail-title {
+        @include font-style(Fellix, 700, 24px, 32px)
+    }
+
+    .event-detail-topic {
+        span {
+            @include font-style(Helvetica, 500, 18px, 20px)
+        }
+
+        @include font-style(Fellix, 500, 20px, 20px)
+    }
+}
+
+.agenda-detail-time-container {
+    @include flex(none, center);
+    gap: 24px;
+
+    .agenda-detail-time {
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+
+        .agenda-detail-date {
+            @include font-style(Helvetica, 500, 16px, 16px);
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .agenda-detail-date-time {
+        @include font-style(Helvetica, 500, 18px, 20px)
+    }
+}
+
+.agenda-detail-speakers {
+    .agenda-detail-speaker-head {
+        @include font-style(Helvetica, 600, 20px, 20px)
+    }
+
+    .agenda-detai-viewall {
+        cursor: pointer;
+
+        &hover {
+            color: blue;
+        }
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .speaker-card {
+        @include flex(none, center);
+        gap: 20px;
+
+        img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        div {
+            p:first-child {
+                @include font-style(Helvetica, 500, 16px, 20px);
+            }
+
+            p {
+                @include font-style(Helvetica, 400, 14px, 20px);
+            }
+        }
+
+        .agenda-detail-viewall {
+            @include font-style(Helvetica, 400, 14px, 14px)
+        }
+    }
+
+}
+
+.agenda-detail-desc {
+    p {
+        text-align: justify;
+        @include font-style(Helvetica, 400, 16px, 22px)
+    }
+
+    .agenda-detail-desc-head {
+        margin-bottom: 16px;
+        @include font-style(Helvetica, 600, 20px, 28px);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1768px) {
+
+    .event-detail-head {
+        padding: 16px;
+
+        p {
+            @include font-style(Fellix, 700, 18px, 24px);
+        }
+    }
+
+    .event-detail-inside {
+        padding: 16px;
+        gap: 32px;
+
+        .event-detail-title {
+            @include font-style(Fellix, 700, 24px, 28px)
+        }
+
+        .event-detail-topic {
+            span {
+                @include font-style(Helvetica, 500, 16px, 20px)
+            }
+
+            @include font-style(Fellix, 500, 16px, 20px)
+        }
+    }
+
+    .agenda-detail-speakers {
+        .agenda-detail-speaker-head {
+            @include font-style(Helvetica, 600, 16px, 20px)
+        }
+
+        .agenda-detai-viewall {
+            cursor: pointer;
+
+            :hover {
+                color: blue;
+            }
+        }
+
+        gap: 16px;
+
+        .speaker-card {
+            @include flex(none, center);
+            gap: 12px;
+
+            img {
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+            }
+
+            div {
+                p:first-child {
+                    @include font-style(Helvetica, 500, 14px, 20px);
+                }
+
+                p {
+                    @include font-style(Helvetica, 400, 12px, 20px);
+                }
+            }
+        }
+    }
+
+    .agenda-detail-desc {
+        p {
+            @include font-style(Helvetica, 400, 14px, 20px)
+        }
+
+        .agenda-detail-desc-head {
+            @include font-style(Helvetica, 600, 16px, 20px);
+        }
+    }
+
+    .agenda-detail-time-container {
+        svg {
+            width: 48px;
+        }
+
+        gap: 16px;
+
+        .agenda-detail-time {
+            gap: 8px;
+
+            .agenda-detail-date {
+                @include font-style(Helvetica, 500, 14px, 16px);
+            }
+        }
+
+        .agenda-detail-date-time {
+            @include font-style(Helvetica, 500, 16px, 20px)
+        }
+    }
+
+}

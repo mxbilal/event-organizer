@@ -1,0 +1,52 @@
+@import '../App.scss';
+
+.desc-main{
+    width: auto;
+    padding: 64px 64px;
+    background-color: $whiteColor;
+}
+
+.desc-container {
+    padding: 36px 0;
+}
+
+.desc-heading{
+    @include title();
+    @include font-style(Helvetica, 700, 16px, 19px);
+}
+.desc-heading-title{
+    @include font-style(Fellix, 700, 48px, 19px);
+}
+.desc-para{
+    @include font-style(Helvetica, 400, 16px, 24px);
+    text-align: justify;
+}
+
+.css-1ujnqem-MuiTabs-root{
+    @include font-style(Fellix, 500, 16px, 19px);
+    .css-1a4cg4j-MuiButtonBase-root-MuiTab-root.Mui-selected {
+        @include font-style(Fellix, 600, 16px, 19px);
+        color: rgb(0, 0, 0);
+    }
+    .css-11yukd5-MuiTabs-indicator {
+        background-color: black;
+    }
+}
+
+
+@media (min-width: 1025px) and (max-width:1439px) {
+    .desc-main{
+        padding: 48px 48px;
+    }
+
+    .desc-container {
+        padding: 24px 0;
+    }
+
+    .desc-heading-title{
+        @include font-style(Fellix, 700, 36px, 19px);
+    }
+    .desc-para{
+        @include font-style(Helvetica, 400, 15px, 24px);
+    }
+}

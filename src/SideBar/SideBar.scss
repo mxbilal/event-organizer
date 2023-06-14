@@ -1,0 +1,61 @@
+@import "../App.scss";
+
+.sidebar-container {
+  background-color: #F5F5F5;
+  width: 15%;
+  @include flex(center, center);
+  flex-direction: column;
+  gap: 48px;
+}
+
+.sidebar-icon {
+  @include flex(none, center);
+  // background: #ECF0FC;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  color: blue;
+  gap: 5px;
+
+  &:hover {
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  }
+
+  .sidebar-icon-text {
+    display: none;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1680px) {
+  .sidebar-container {
+    width: 15%;
+    gap: 36px;
+
+    svg {
+      width: 18px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .sidebar-container {
+    background-color: #FAFBFC;
+    width: 100% !important;
+    flex-direction: row;
+    gap: 2px;
+    justify-content: space-around;
+    height: 68px !important;
+  }
+
+  .sidebar-icon {
+    padding: 8px 10px;
+    background: #ECF0FC;
+  }
+
+  .sidebar-icon-text {
+    display: block !important;
+    @include font-style(Helvetica, 500, 14px, 15px)
+  }
+}

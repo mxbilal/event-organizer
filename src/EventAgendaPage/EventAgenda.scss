@@ -1,0 +1,212 @@
+@import '../App.scss';
+
+.event-agenda-main {
+    display: flex;
+    gap: 5px;
+    background-color: $whiteColor;
+    height: 100%;
+
+    .css-ee20y-MuiPaper-root {
+        background-color: rgb(243, 244, 248);
+        border-radius: 10px;
+    }
+
+}
+
+.event-agenda-inside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-agenda-title-main {
+    width: 92%;
+    padding: 16px;
+    background-color: $child-titleColor;
+
+    .event-agenda-title {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        @include flex(space-between, center);
+
+        p {
+            @include font-style(Fellix, 700, 20px, 28px);
+        }
+    }
+}
+
+.event-agenda-cards-main {
+    @include flex(content, center);
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: overlay;
+    flex-grow: 1;
+    padding: 16px;
+}
+
+.event-agenda-card {
+    padding: 16px;
+    border-radius: 10px;
+    display: flex;
+    gap: 16px;
+
+    .agenda-time {
+        @include font-style(Helvetica, 600, 18px, 140%)
+    }
+
+    div:first-child::after {
+        content: "";
+        background: rgba(40, 40, 40, 0.08);
+        width: 1px;
+        height: 100%;
+        display: block;
+    }
+
+    div:first-child {
+        display: flex;
+        gap: 12px;
+    }
+
+    .event-agenda-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .event-agenda-speakers {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    img {
+        border-radius: 50px;
+        width: 28px;
+        height: 28px;
+    }
+
+    img:not(:first-child) {
+        margin-left: -10px;
+    }
+}
+
+.event-agenda {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .title {
+        @include font-style(Helvetica, 600, 18px, 120%)
+    }
+
+    .sub-title {
+        @include font-style(Helvetica, 500, 16px, 140%)
+    }
+
+    .para-text {
+        @include font-style(Helvetica, 400, 14px, 150%)
+    }
+}
+
+.event-agenda-calendar {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    justify-content: start;
+    padding: 16px;
+    background: #FAFBFC;
+
+    .agenda-calendar-inside {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+
+        .agenda-day {
+            color: rgba(0, 0, 0, 0.5);
+            @include font-style(Helvetica, 500, 14px, 120%);
+        }
+
+        .agenda-date {
+            @include font-style(Helvetica, 600, 18px, 120%);
+            padding: 7px 8px 7px 8px;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .agenda-today {
+            background-color: #4C6FFF;
+            color: #FFF;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .event-agenda-title-main {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .event-agenda-cards-main {
+        .css-ee20y-MuiPaper-root {
+            width: 98%;
+        }
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1768px) {
+
+    .event-agenda-title-main {
+        padding: 12px;
+    }
+
+    .event-agenda-cards-main {
+        padding: 12px;
+    }
+
+    .event-agenda-card {
+        .agenda-time {
+            @include font-style(Helvetica, 600, 17px, 140%)
+        }
+    }
+
+    .event-agenda {
+        .title {
+            @include font-style(Helvetica, 700, 17px, 120%)
+        }
+
+        .sub-title {
+            @include font-style(Helvetica, 500, 14px, 140%)
+        }
+
+        .para-text {
+            @include font-style(Helvetica, 400, 12px, 150%)
+        }
+    }
+
+    .event-agenda-calendar {
+        gap: 20px;
+        padding: 12px;
+
+        .agenda-calendar-inside {
+            gap: 4px;
+
+            .agenda-day {
+                @include font-style(Helvetica, 500, 12px, 120%);
+            }
+
+            .agenda-date {
+                @include font-style(Helvetica, 600, 16px, 120%);
+                padding: 7px 8px 7px 8px;
+                border-radius: 50%;
+            }
+
+            .agenda-today {
+                background-color: #4C6FFF;
+                color: #FFF;
+            }
+        }
+    }
+}

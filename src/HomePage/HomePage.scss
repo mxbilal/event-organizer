@@ -1,0 +1,110 @@
+@import '../App.scss';
+
+.css-18lrjg1-MuiCircularProgress-root {
+  margin: 20% 50% !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root,
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  @include font-style(Helvetica, 16px, 400, 100%)
+}
+
+.css-ngsesf-MuiFormControl-root {
+  background-color: #282828 !important;
+  border-radius: 6px;
+  border: none;
+  @include font-style(Helvetica, 400, 16px, 100%);
+  min-width: 180px !important;
+
+  .MuiSelect-select,
+  .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+    color: $whiteColor !important;
+  }
+}
+
+.more-rounded-btn {
+  background-color: #282828;
+  border-radius: 9999px;
+  padding: 9px 9px;
+  margin-left: -25px;
+  color: $whiteColor;
+  z-index: 1;
+
+  p {
+    margin: auto;
+  }
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 17px 24px 21px !important;
+}
+
+@media (max-width: 768px) {
+  .css-ngsesf-MuiFormControl-root {
+    width: 100% !important;
+  }
+}
+
+.speakers-overlay-main {
+
+  position: relative;
+
+  img:hover~.speakers-overlay {
+    opacity: 1;
+  }
+
+  .speakers-overlay {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 250px;
+    height: 200px;
+    border-radius: 8px;
+    background: $whiteColor;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 20px;
+    opacity: 0;
+
+    .speaker-title {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+
+      .speaker-name {
+        .name {
+          @include font-style(HelveticaNeueCyr, 500, 16px, 18.75px)
+        }
+
+        .type {
+          @include font-style(Inter, 400, 14px, 14px);
+          color: #282828;
+        }
+      }
+    }
+
+    .speaker-bio {
+      p {
+        @include font-style(Inter, 400, 12px, 21px);
+        color: #282828;
+      }
+    }
+  }
+
+  .speaker-bio {
+    // width: 100px;
+    height: 100px;
+    padding: 10px;
+    overflow-y: hidden;
+    box-sizing: border-box;
+  }
+
+  .speakers-links {
+    height: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+  }
+}

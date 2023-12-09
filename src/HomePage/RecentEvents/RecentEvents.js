@@ -18,10 +18,14 @@ import {
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import { Avatar } from "@mui/material";
+import { dummyEvents } from "../dummyEvents";
 
 const RecentEvents = () => {
   // const [eventId,setEventId] = useContext(EventIdContext)
-  const [eventTypes, setEventTypes] = useState([]);
+  const [eventTypes, setEventTypes] = useState([
+    { id: 1, name: "marriage" },
+    { id: 2, name: "club" },
+  ]);
   const [anchorEl, setAnchorEl] = useState(null);
   const [modal, setModal] = useState(false);
   // const [eventTypesDefault, setEventTypesDefault] = useState("none");
@@ -38,21 +42,22 @@ const RecentEvents = () => {
   const fetchData = async () => {
     setLoader(true);
     try {
-      let values = await getRecentEvents({
-        offset,
-        limit,
-        callback: (res) => res,
-      });
-      setTotalEvent(values.meta.total_count);
-      let newArr = [];
-      let length = values?.items?.length;
-      for (let i = 0; i < length; i++) {
-        let id = values?.items[i]?.id;
-        let spData = await getPeopleSpeakers({ id, callback: (res) => res });
-        newArr.push({ event: values.items[i], speakers: spData });
-      }
-      setRecentEvents(recentEvents.concat(newArr));
-      setAllEvent(newArr);
+      // let values = await getRecentEvents({
+      //   offset,
+      //   limit,
+      //   callback: (res) => res,
+      // });
+      let values = dummyEvents();
+      setTotalEvent(values.total);
+      // let newArr = [];
+      // let length = values?.items?.length;
+      // for (let i = 0; i < length; i++) {
+      //   let id = values?.items[i]?.id;
+      //   let spData = await getPeopleSpeakers({ id, callback: (res) => res });
+      //   newArr.push({ event: values.items[i], speakers: spData });
+      // }
+      setRecentEvents(recentEvents.concat(values));
+      setAllEvent(values);
     } catch (e) {
       console.log("error", e);
     }
@@ -172,9 +177,11 @@ const RecentEvents = () => {
                 <MenuItem value="none" disabled>
                   Event Type
                 </MenuItem>
-                {eventTypes.map((types) => (
+                <MenuItem value={0}>{"Music"}</MenuItem>
+                <MenuItem value={1}>{"Concert"}</MenuItem>
+                {/* {eventTypes.map((types) => (
                   <MenuItem value={types.value}>{types.label}</MenuItem>
-                ))}
+                ))} */}
                 {/* <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={30}>Thirty</MenuItem> */}
               </Select>
@@ -206,25 +213,25 @@ const RecentEvents = () => {
             <div
               className="recents-events-card"
               key={index}
-              onClick={() => {
-                localStorage.setItem("evId", data.event.id);
-                localStorage.setItem("slug", data.event.meta.slug);
-                localStorage.setItem("menu", "participants");
-                navigate(
-                  "/events/" +
-                    data.event.id +
-                    "/" +
-                    data.event.meta.slug +
-                    "/participants/",
-                  {
-                    state: { id: data.event.id },
-                  }
-                );
-              }}
+              // onClick={() => {
+              //   localStorage.setItem("evId", data.event.id);
+              //   localStorage.setItem("slug", data.event.meta.slug);
+              //   localStorage.setItem("menu", "participants");
+              //   navigate(
+              //     "/events/" +
+              //       data.event.id +
+              //       "/" +
+              //       data.event.meta.slug +
+              //       "/participants/",
+              //     {
+              //       state: { id: data.event.id },
+              //     }
+              //   );
+              // }}
             >
               <img
                 className="recents-events-card-img"
-                src={data.event.image?.meta?.download_url}
+                src={data.event.image}
                 alt="event-card"
               />
               <div className="recents-event-card-detail">
@@ -254,15 +261,15 @@ const RecentEvents = () => {
                   </p>
 
                   <div className="recents-event-speakers">
-                    {/* ev.speakers.items.map((sp) => <>{sp.people?.full_name}</> */}
-                    {data.speakers.items.map((speaker, index) => (
+                    {/* ev.speakers.items.map((sp) => <>{sp?.full_name}</> */}
+                    {data.speakers.map((speaker, index) => (
                       <>
                         {index < 5 && (
                           <div className="speakers-overlay-main">
                             <img
-                              src={speaker.people.avatar.download_url}
+                              src={speaker.url}
                               alt="speaker"
-                              // title={speaker.people.full_name}
+                              // title={speaker.full_name}
                               width="36px"
                               height="36px"
                               className="speaker-dp"
@@ -274,13 +281,11 @@ const RecentEvents = () => {
                                 <div className="speaker-avatar">
                                   <Avatar
                                     sx={{ width: 56, height: 56 }}
-                                    src={speaker.people.avatar.download_url}
+                                    src={speaker.url}
                                   />
                                 </div>
                                 <div className="speaker-name">
-                                  <p className="name">
-                                    {speaker.people.full_name}
-                                  </p>
+                                  <p className="name">{speaker.full_name}</p>
                                   <p className="type">Speaker</p>
                                 </div>
                               </div>
@@ -339,9 +344,9 @@ const RecentEvents = () => {
                         )}
                       </>
                     ))}
-                    {data.speakers.items.length - 5 > 0 && (
+                    {data.speakers.length - 5 > 0 && (
                       <div className="more-rounded-btn">
-                        <p>{data.speakers.items.length - 5} more</p>
+                        <p>{data.speakers.length - 5} more</p>
                       </div>
                     )}
                   </div>

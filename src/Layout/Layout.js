@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
       <>
         <HeaderPage />
         <div className="layout-main">
-          {loader && <CircularProgress />}
+          {/* {loader && <CircularProgress />} */}
           {!loader && login && (
             <div className="stream-container">
               <div className="layout-event-stream">

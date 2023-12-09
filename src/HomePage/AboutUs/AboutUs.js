@@ -15,10 +15,10 @@ const AboutUs = () => {
   return (
     <>
       {loader && ""}
-      {!loader && aboutUs !== undefined && aboutUs.length !== 0 && (
+      {!loader && (
         <div className="div">
           <p className="res-gradient-heading">ABOUT US</p>
-          <p className="res-main-heading">{aboutUs.title}</p>
+          <p className="res-main-heading">{aboutUs?.title ?? "Title"}</p>
 
           <div className="abous-us-main">
             <div className="about-col-1">
@@ -38,20 +38,22 @@ const AboutUs = () => {
                 />
               </svg>
 
-              <p className="main-heading">{aboutUs.title}</p>
+              <p className="main-heading">
+                {aboutUs?.title ?? "We are event organizer's"}
+              </p>
               <p className="para">{}</p>
-              <p className="para">{aboutUs.body[1].value.text}</p>
-              <div className="para">{parse(aboutUs.body[2].value)}</div>
+              <p className="para">{"Loram ipsum text"}</p>
+              {/* <div className="para">{parse(aboutUs.body[2].value)}</div> */}
             </div>
             <div className="about-col-2">
               <img
-                src={aboutUs.image.meta.download_url}
+                src="/assets/dummy/about1.jpg"
                 alt="about-us"
                 width="565px"
                 height="329px"
               />
               <img
-                src={aboutUs.image.meta.download_url}
+                src="/assets/dummy/about2.jpg"
                 alt="about-us"
                 width="565px"
                 height="329px"

@@ -25,7 +25,7 @@ const HomePage = () => {
   return (
     <>
       {loader && <CircularProgress />}
-      {!loader && Object.keys(bannerEvent).length > 0 && (
+      {!loader && (
         <>
           {/* <p>{eventId2}</p> */}
           <Banner bannerEvent={bannerEvent} />
